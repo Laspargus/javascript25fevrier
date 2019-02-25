@@ -184,6 +184,66 @@ cards[i].getElementsByClassName('btn-success')[0].addEventListener('mouseover', 
 };
 
 
+/*
+Fonctionnalité 7 :
+Allez on va rajouter un peu de WTF dans la page : si un utilisateur clique sur le bouton gris ==>, 
+la dernière card (en bas à droite) va passer en premier (en haut à gauche). 
+On va pouvoir faire tourner les cards !
+
+Indice : Cette fonctionnalité n'est pas ultra complexe en fait : il faut pointer sur le noeud-parent 
+des 6 cards puis déplacer la card n°6 en premier avec un insertBefore.
+*/
+
+triggerbutton = document.querySelector('.btn-secondary')
+console.log(triggerbutton)
+
+card6 = document.getElementsByClassName('col-md-4')[5];
+console.log(card6);
+
+card1 = document.getElementsByClassName('col-md-4')[0];
+console.log(card1);
+
+var parentDiv = card1.parentNode
+console.log(parentDiv);
+triggerbutton.addEventListener('click', function (){
+	parentDiv.insertBefore(card6, card1);
+});
+
+/*
+Fonctionnalité 8 :
+Évidemment tu t'y attendais : on va faire tourner les card dans l'autre sens aussi. 
+Donc si un utilisateur clique sur le bouton bleu <==, la première card devra passer en dernier. 
+À première vue, tu te dis que si tu as réussi à faire la fonctionnalité précédente, 
+celle-ci c'est du gateau... sauf qu'il y a quelques pièges. 😈
+
+Indice 1 : Premier piège : il y a un lien HTML sur le bouton et si tu cliques dessus, 
+une page s'ouvre ! Il faut que tu bloques ce comportement par défaut (via l'objet event - cf le cours).
+
+Indice 2 : Deuxième piège : tu as utilisé "insertBefore" pour la fonctionnalité précédente
+ mais il n'y a pas de "insertAfter". Une solution est de considérer qu'un "insertAfter un élément A" serait,
+  s'il existait, équivalent à faire un "insertBefore sur le nœud APRES l'élément A". 
+  Et tu peux pointer sur un noeud APRES un élément en faisant "lastCard.nextSibling".
+*/
+/*
+
+disorder = document.querySelector('.btn-primary')
+console.log(disorder)
+
+card6 = document.getElementsByClassName('col-md-4')[5];
+console.log(card6);
+
+card1 = document.getElementsByClassName('col-md-4')[0];
+console.log(card1);
+
+var parentDiv = card1.parentNode
+console.log(parentDiv);
+triggerbutton.addEventListener('click', function (){
+	parentDiv.insertBefore(card6, card1);
+});
+
+*/
+
+
 
 
 
