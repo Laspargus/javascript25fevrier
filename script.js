@@ -53,6 +53,8 @@ hamburgerbutton.addEventListener('click',function(){
 
 
 
+
+
 //document.getElementsByClassName(names); 
 //document.getElementById(id);
 //document.getElementsByTagName() 
@@ -166,60 +168,20 @@ Indice 3 : Une fois que ça marche sur une card,
  pour appliquer un addEventListener à chacune. 
  /!\ mets bien le compteur de ta boucle en "let", sinon tu vas avoir des surprises…
 */
-/*
-card1 = document.getElementsByClassName('card')[0];
-image1=card1.getElementsByClassName('card-img-top')[0];
-buttonview1 = card1.getElementsByClassName('btn-success')[0]
-para1 = card1.getElementsByClassName('card-text')[0]
 
-
-
-buttonview1.addEventListener('mouseover', function(){
-	card1.style.color='blue';
-	image1.classList.toggle("imgsize");
-	para1.classList.toggle("textdisplay");
-});
-
-*/
-/*
-cards = document.getElementsByClassName('card');
-
-console.log(cards.length);
-for (var i = 0; i < cards.length; i++){
-		cards[i].getElementsByClassName('btn-success')[0].addEventListener('mouseover', function(){
-			console.log(cards[i]);
-			console.log(cards.getElementsByClassName('card-img-top')[0]);
-			//console.log(cards[0].querySelector('card-img-top'));
-			//console.log(cards[0].querySelector('card-text'));
-			//cards[i].getElementsByClassName('card-img-top')[0].classList.toggle("imgsize");
-			//cards[i].getElementsByClassName('card-text')[0].classList.toggle("textdisplay");
-		});
-
-}
-
-*/
 
 cards = document.getElementsByClassName('card');
 console.log(cards.length);
-for (var i = 0; i < cards.length; i++){
+console.log(cards);
 
+for (let i = 0; i < cards.length; i++){
+	//console.log(cards[i].getElementsByClassName('btn-success')[0])
 
-	cards[i].getElementsByClassName('btn-success')[i].addEventListener('mouseover', function(){
-		//console.log(cards[0].getElementsByClassName('card-img-top')[0]);
-		//console.log(cards[i].getElementsByClassName('card-img-top')[i]);
-
-	cards[i].getElementsByClassName('card-img-top')[i].classList.toggle("imgsize");
-	cards[i].getElementsByClassName('card-text')[i].classList.toggle("textdisplay");
+cards[i].getElementsByClassName('btn-success')[0].addEventListener('mouseover', function(){
+	document.getElementsByClassName('card-img-top')[i].classList.toggle("imgsize");
+	document.getElementsByClassName('card-text')[i].classList.toggle("textdisplay");
 });
 };
-
-
-
-
-
-
-
-
 
 
 
